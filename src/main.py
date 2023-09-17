@@ -1,18 +1,17 @@
-##  Importing required modules
 import os
 import fnmatch
 from pygame import mixer 
 from tkinter.filedialog import askdirectory
-from tkinter import Tk, PhotoImage, Label, Frame, Button, Listbox
+from tkinter import Tk, PhotoImage, Label, Listbox, Frame, Button
 
 
 VER = "1.2.4"   # default-version-value 
 Font = ("Gaborila", 14)
-app = Tk()
-app.title(f"Py-Music-Player: {VER}")
-app.geometry('550x450')     # default-Dimension: 550x600
-app.resizable(0, 0)  # not resizable  # type: ignore
-app.config(bg="black")
+canvas = Tk()
+canvas.title(f"Py-Music-Player: {VER}")
+canvas.geometry('550x450')     # default-Dimension: 550x600
+canvas.resizable(0, 0)  # not resizable  # type: ignore
+canvas.config(bg="black")
 
 rootpath = askdirectory()  #  Select the Folder
 pattern = "*.mp3" 
@@ -20,11 +19,11 @@ pattern = "*.mp3"
 mixer.init()
 
 
-prev_img= PhotoImage(file='img/prev_img.png')
-stop_img= PhotoImage(file='img/stop_img.png')
-play_img= PhotoImage(file='img/play_img.png')
-pause_img= PhotoImage(file='img/pause_img.png')
-next_img= PhotoImage(file='img/next_img.png')
+prev_img= PhotoImage(file='./img/prev_img.png')
+stop_img= PhotoImage(file='./img/stop_img.png')
+play_img= PhotoImage(file='./img/play_img.png')
+pause_img= PhotoImage(file='./img/pause_img.png')
+next_img= PhotoImage(file='./img/next_img.png')
 
 
 def select():
@@ -75,35 +74,35 @@ def pause_song():
         PauseButton['text'] = "Pause"
 
 
-listBox = Listbox(app, fg="red", bg="black", width=100, font=Font)
+listBox = Listbox(canvas, fg="red", bg="black", width=100, font=Font)
 listBox.pack(padx=15, pady=15)
 
 
-label = Label(app, text="", bg="black", fg="yellow", font=Font)
+label = Label(canvas, text="", bg="black", fg="yellow", font=Font)
 label.pack(pady=15)
 
 
-top = Frame(app, bg="black")
+top = Frame(canvas, bg="black")
 top.pack(padx=10, pady=5, anchor='center')
 
 
-prevButton = Button(app, text="Prev", image=prev_img, bg="black", borderwidth=0, command=play_prev)
+prevButton = Button(canvas, text="Prev", image=prev_img, bg="black", borderwidth=0, command=play_prev)
 prevButton.pack(pady=15, in_ = top, side='left')
 
 
-StopButton = Button(app, text="Stop", image=stop_img, bg="black", borderwidth=0, command=stop)
+StopButton = Button(canvas, text="Stop", image=stop_img, bg="black", borderwidth=0, command=stop)
 StopButton.pack(pady=15, in_ = top, side='left') 
 
 
-PlayButton = Button(app, text="Play", image=play_img, bg="black", borderwidth=0, command=select)
+PlayButton = Button(canvas, text="Play", image=play_img, bg="black", borderwidth=0, command=select)
 PlayButton.pack(pady=15, in_ = top, side='left') 
 
 
-PauseButton = Button(app, text="Pause", image=pause_img, bg="black", borderwidth=0, command=pause_song)
+PauseButton = Button(canvas, text="Pause", image=pause_img, bg="black", borderwidth=0, command=pause_song)
 PauseButton.pack(pady=15, in_ = top, side='left') 
 
 
-NextButton = Button(app, text="Next", image=next_img, bg="black", borderwidth=0, command=play_next)
+NextButton = Button(canvas, text="Next", image=next_img, bg="black", borderwidth=0, command=play_next)
 NextButton.pack(pady=15, in_ = top, side='left') 
 
 
@@ -111,4 +110,4 @@ for root, dirs, files in os.walk(rootpath):
     for filename in fnmatch.filter(files, pattern):
             listBox.insert('end', filename)
 
-app.mainloop() 
+canvas.mainloop() 
