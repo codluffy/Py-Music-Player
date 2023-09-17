@@ -19,11 +19,11 @@ pattern = "*.mp3"
 mixer.init()
 
 
-prev_img= tk.PhotoImage(file='./img/prev_img.png')
-stop_img= tk.PhotoImage(file='./img/stop_img.png')
-play_img= tk.PhotoImage(file='./img/play_img.png')
-pause_img= tk.PhotoImage(file='./img/pause_img.png')
-next_img= tk.PhotoImage(file='./img/next_img.png')
+prev_img= tk.PhotoImage(file='img/prev_img.png')
+stop_img= tk.PhotoImage(file='img/stop_img.png')
+play_img= tk.PhotoImage(file='img/play_img.png')
+pause_img= tk.PhotoImage(file='img/pause_img.png')
+next_img= tk.PhotoImage(file='img/next_img.png')
 
 
 def select():
