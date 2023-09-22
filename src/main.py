@@ -1,13 +1,14 @@
-import tkinter as tk
-import fnmatch
+##  Importing required modules
 import os
+import fnmatch
 from pygame import mixer 
 from tkinter.filedialog import askdirectory
+from tkinter import Tk, PhotoImage, Label, Frame, Button, Listbox
 
 
 VER = "1.2.4"   # default-version-value 
 Font = ("Gaborila", 14)
-canvas = tk.Tk()
+canvas = Tk()
 canvas.title(f"Py-Music-Player: {VER}")
 canvas.geometry('550x450')     # default-Dimension: 550x600
 canvas.resizable(0, 0)  # not resizable  # type: ignore
@@ -19,11 +20,11 @@ pattern = "*.mp3"
 mixer.init()
 
 
-prev_img= tk.PhotoImage(file='img/prev_img.png')
-stop_img= tk.PhotoImage(file='img/stop_img.png')
-play_img= tk.PhotoImage(file='img/play_img.png')
-pause_img= tk.PhotoImage(file='img/pause_img.png')
-next_img= tk.PhotoImage(file='img/next_img.png')
+prev_img= PhotoImage(file='img/prev_img.png')
+stop_img= PhotoImage(file='img/stop_img.png')
+play_img= PhotoImage(file='img/play_img.png')
+pause_img= PhotoImage(file='img/pause_img.png')
+next_img= PhotoImage(file='img/next_img.png')
 
 
 def select():
@@ -74,35 +75,35 @@ def pause_song():
         PauseButton['text'] = "Pause"
 
 
-listBox = tk.Listbox(canvas, fg="red", bg="black", width=100, font=Font)
+listBox = Listbox(canvas, fg="red", bg="black", width=100, font=Font)
 listBox.pack(padx=15, pady=15)
 
 
-label = tk.Label(canvas, text="", bg="black", fg="yellow", font=Font)
+label = Label(canvas, text="", bg="black", fg="yellow", font=Font)
 label.pack(pady=15)
 
 
-top = tk.Frame(canvas, bg="black")
+top = Frame(canvas, bg="black")
 top.pack(padx=10, pady=5, anchor='center')
 
 
-prevButton = tk.Button(canvas, text="Prev", image=prev_img, bg="black", borderwidth=0, command=play_prev)
+prevButton = Button(canvas, text="Prev", image=prev_img, bg="black", borderwidth=0, command=play_prev)
 prevButton.pack(pady=15, in_ = top, side='left')
 
 
-StopButton = tk.Button(canvas, text="Stop", image=stop_img, bg="black", borderwidth=0, command=stop)
+StopButton = Button(canvas, text="Stop", image=stop_img, bg="black", borderwidth=0, command=stop)
 StopButton.pack(pady=15, in_ = top, side='left') 
 
 
-PlayButton = tk.Button(canvas, text="Play", image=play_img, bg="black", borderwidth=0, command=select)
+PlayButton = Button(canvas, text="Play", image=play_img, bg="black", borderwidth=0, command=select)
 PlayButton.pack(pady=15, in_ = top, side='left') 
 
 
-PauseButton = tk.Button(canvas, text="Pause", image=pause_img, bg="black", borderwidth=0, command=pause_song)
+PauseButton = Button(canvas, text="Pause", image=pause_img, bg="black", borderwidth=0, command=pause_song)
 PauseButton.pack(pady=15, in_ = top, side='left') 
 
 
-NextButton = tk.Button(canvas, text="Next", image=next_img, bg="black", borderwidth=0, command=play_next)
+NextButton = Button(canvas, text="Next", image=next_img, bg="black", borderwidth=0, command=play_next)
 NextButton.pack(pady=15, in_ = top, side='left') 
 
 
