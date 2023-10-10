@@ -106,13 +106,8 @@ NextButton = Button(canvas, text="Next", image=next_img, bg="black", borderwidth
 NextButton.pack(pady=15, in_ = top, side='left') 
 
 
-def main():
-    for root, dirs, files in os.walk(rootpath):
-        for filename in fnmatch.filter(files, pattern):
-                listBox.insert('end', filename)
+for root, dirs, files in os.walk(rootpath):
+    for filename in fnmatch.filter(files, pattern):
+            listBox.insert('end', filename)
 
-    canvas.mainloop() 
-
-
-if __name__ == "__main__":
-    main()
+canvas.mainloop() 
