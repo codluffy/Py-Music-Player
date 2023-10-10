@@ -18,4 +18,4 @@
 #### This project is fully written in python.
 
 ## Conclusion: 
-#### If any corrections needed anyone can modify this repository.
+#### I hope you may enjoy this music player app.
