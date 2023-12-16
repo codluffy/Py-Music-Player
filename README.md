@@ -15,4 +15,11 @@
 
 
 ## Description: 
+<<<<<<< HEAD
 - This project is fully written in python.
+=======
+#### This project is fully written in python.
+
+## Conclusion: 
+#### I hope you may enjoy this music player app.
+>>>>>>> a14182cc65b00ecfc2797c0265e8c4e77629d4ff
