@@ -22,4 +22,7 @@
 
 ## Conclusion: 
 #### I hope you may enjoy this music player app.
+<<<<<<< HEAD
+>>>>>>> a14182cc65b00ecfc2797c0265e8c4e77629d4ff
+=======
 >>>>>>> a14182cc65b00ecfc2797c0265e8c4e77629d4ff
