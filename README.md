@@ -18,7 +18,6 @@
 
 ## Description: 
 - This project is fully written in python.
-- This project is fully written in python.
 
 ## Conclusion: 
 - I hope you may enjoy this music player app.
